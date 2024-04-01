@@ -3,12 +3,11 @@ import 'package:test_nextline/resources/screen/responsive/responsive.dart';
 
 @immutable
 class GeneralButton extends StatelessWidget {
-  final double? height, width;
-  final String text;
+  final double? height;
+  final double? width;
+  final Widget text;
   final Color? colorButton;
-  final TextStyle? textStyle;
   final double? rounded;
-  final TextAlign? textAlign;
   final double? elevation;
   final VoidCallback? event;
 
@@ -18,9 +17,7 @@ class GeneralButton extends StatelessWidget {
     this.width,
     required this.text,
     this.colorButton,
-    this.textStyle,
     this.rounded,
-    this.textAlign,
     this.elevation,
     this.event,
   });
@@ -41,11 +38,7 @@ class GeneralButton extends StatelessWidget {
           ),
         ),
         onPressed: event ?? () {},
-        child: Text(
-          text,
-          style: textStyle,
-          textAlign: textAlign ?? TextAlign.start,
-        ),
+        child: text,
       ),
     );
   }
